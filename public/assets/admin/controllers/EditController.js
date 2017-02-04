@@ -3,13 +3,13 @@
     angular.module('admin')
         .controller('EditController', EditController);
 
-    EditController.$inject = ['$scope', '$http', '$window', '$location', '$rootScope'];
+    EditController.$inject = ['$scope', '$http', '$window', '$location', '$routeParams'];
     
-    function EditController($scope, $http, $window, $location, $rootScope) {
+    function EditController($scope, $http, $window, $location, $routeParams) {
         
         $scope.init = function()
         {
-            $http.get('admin/get-item' + $rootScope.id)
+            $http.get('admin/get-item/' + $routeParams.id)
             .then(
                 function(response) 
                 {
@@ -22,5 +22,7 @@
                 }
             );
         }
+
+        $scope.init();
     }
 })();

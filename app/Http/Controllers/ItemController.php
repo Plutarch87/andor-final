@@ -192,4 +192,11 @@ class ItemController extends Controller
 
         return response()->json($items);
     }
+
+    public function getItem($id)
+    {
+        $item = Item::where('id', '=', $id)->get();
+
+        return response()->json($item);
+    }
 }

@@ -123,3 +123,4 @@ Route::post('andor-admin', 'Auth\AuthController@login');
 Route::get('logout', 'Auth\AuthController@logout');
 
 Route::get('admin/get-all-items', 'ItemController@getAllItems');
+Route::get('admin/get-item/{id}', 'ItemController@getItem');
