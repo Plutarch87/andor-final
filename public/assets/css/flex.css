@@ -1,8 +1,7 @@
 .flex-item {
 	margin: 20px;
-	height: 150px; 
 	background-color: white;
-	width: calc(110% * (1/4) - 10px - 1px);
+	width: calc(110% * (1/6) - 10px - 1px);
 	border: 2px solid #762DA1;
 	text-align: center;
 	border-radius: 3%;
@@ -30,7 +29,7 @@
     align-items: flex-start;
     }
 
-.flex-item:nth-child(1) {
+/*.flex-item:nth-child(1) {
     -webkit-order: 0;
     -ms-flex-order: 0;
     order: 0;
@@ -172,4 +171,4 @@
     -webkit-align-self: auto;
     -ms-flex-item-align: auto;
     align-self: auto;
-    }
+    }*/

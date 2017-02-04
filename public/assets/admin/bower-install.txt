@@ -1,0 +1,5 @@
+1) https://nodejs.org/en/ "LTS version", download -- open cmd and try to run npm if dosent work restrat pc
+
+2) npm install -g bower to install bower -g is for global
+
+3) bower install in folder where is bower.json file

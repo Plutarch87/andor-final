@@ -1,0 +1,24 @@
+{
+  "name": "admin",
+  "authors": [
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8",
+    "angular-file-upload": "^2.3.4",
+    "bower": "*",
+    "install": "^1.0.4",
+    "jquery": "~1.10.2"
+  }
+}

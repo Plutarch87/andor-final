@@ -15,7 +15,7 @@ window.addEventListener("scroll", fixNav);
 
 $(document).ready(function() {
     $("nav > ul > li").mouseover(function() {
-        var the_width = $(this).find("a").width();
+        var the_width = $(this).width();
         var child_width = $(this).find("ul").width();
         var width = parseInt((child_width - the_width)/2);
         $(this).find("ul").css('left', -width);

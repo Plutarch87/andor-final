@@ -20,17 +20,17 @@ Route::get('narudzbine_statistika', function()
 	return view('narudzbine_statistika');
 });
 //edit
-Route::get('add-to-cart/{id}', [
+Route::post('add-to-cart/{id}', [
 		'as' => 'item.addToCart',	
 		'uses' => 'CartController@addToCart'
 	]);
 //update
-Route::get('reduce-one/{id}', [
+Route::post('reduce-one/{id}', [
 		'as' => 'item.reduceByOne',
 		'uses' => 'CartController@getReduceByOne'
 	]);
 //destroy
-Route::get('reduce-all/{id}', [
+Route::post('reduce-all/{id}', [
 		'as' => 'item.removeItem',
 		'uses' => 'CartController@getRemoveItem'
 	]);
@@ -111,9 +111,15 @@ Route::post('carousel', [
 ]);
 
 Route::get('andor-admin', function(){
-	return view('auth.login');
+	return view('admin.index');
+});
+
+Route::get('admin', function() {
+	return view('admin.admin');
 });
 
 Route::post('andor-admin', 'Auth\AuthController@login');
 
 Route::get('logout', 'Auth\AuthController@logout');
+
+Route::get('admin/get-all-items', 'ItemController@getAllItems');

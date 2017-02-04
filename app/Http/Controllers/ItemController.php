@@ -40,7 +40,7 @@ class ItemController extends Controller
             'categories' => $categories,
             'subcats' => $subcats,
         ]);
-    }  
+    }
 
     public function store(Request $request, Category $category)
     {   
@@ -184,5 +184,12 @@ class ItemController extends Controller
        $item->forceDelete();
 
        return redirect('inactive'); 
+    }
+
+    public function getAllItems()
+    {
+        $items = Item::get();
+
+        return response()->json($items);
     }
 }

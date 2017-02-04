@@ -14,6 +14,7 @@
 			<hr>
 			
 			{{ Form::open(['action' => ['CartController@postCheckout'], 'role' => 'form', 'id' => 'checkout-form']) }}
+			{{ Form::token() }}
 				@include('partials.forms.order')
 			{{ Form::close() }}
 		</div>

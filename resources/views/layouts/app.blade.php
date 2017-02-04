@@ -10,7 +10,9 @@
 {!! Html::style('assets/css/style.css') !!}
 {!! Html::style('assets/css/flex.css') !!}
 {!! Html::style('assets/css/media-width.css') !!}
-{!! Html::style('https://fonts.googleapis.com/css?family=Lobster') !!}
+{{-- {!! Html::style('https://fonts.googleapis.com/css?family=Lobster') !!} --}}
+
+<meta name="csrf-token" content="{{ csrf_token() }}">
 
 @stack('styles')
 
@@ -59,7 +61,7 @@
                 @endif
                 </ul>
         </li>
-        <li class="shopingwrapper"><a href="{{ route('item.showCart') }}"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span id="shopcircle" class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : null }}</span></a></li>
+        <li class="shopingwrapper"><a onclick="AjaxRequests.getDataForCart();"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span><span id="shopcircle" class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : null }}</span></a></li>
     </ul>                       
 </nav>
     @yield('content')           

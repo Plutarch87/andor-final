@@ -1,0 +1,29 @@
+<div class="container-fluid">
+	<table>
+		<thead>
+			<tr>
+				<th class="table-cell-64"></th>
+				<th>Ime</th>
+				<th>Sifra</th>
+				<th>Cena</th>
+				<th class="table-commands"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items track by $index">
+				<td>
+					<div class="thumbnail">
+	        		<img ng-src="storage/andor/{{ item.img }}">
+	        		</div>
+				</td>
+				<td>{{ item.name }}</td>
+				<td>{{ item.sifra }}</td>
+				<td>{{ item.price }}</td>
+				<td class="table-commands">
+					<button ng-click="editItem(item.id)" class="btn glyphicon glyphicon-pencil cursor-pointer"></button>
+					<button ng-click="deleteItem(item.id)" class="btn glyphicon glyphicon-trash cursor-pointer"></button>
+				</td>
+			<tr>
+		</tbody>
+	</table>
+</div>
