@@ -38,7 +38,7 @@
 
 
     	// set Header fixed to top allways
-    	var windowEl = angular.element($window);
+    	var windowEl = angular.element('.fix-table-height');
       	var handler = function() {
         	$scope.scroll = windowEl.scrollTop();
       	}

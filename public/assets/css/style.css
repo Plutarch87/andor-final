@@ -435,3 +435,12 @@ position: relative;
 .c-total {
 	float: left;
 }
+
+.fix-height {
+	height: 100vh;
+}
+
+.fix-table-height {
+	height: 70vh;
+	overflow: auto;
+}

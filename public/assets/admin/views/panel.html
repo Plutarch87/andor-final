@@ -1,36 +1,40 @@
-<div class="search">
-	<div class="form-group">
-		<label for="search">Pretraga</label>
-		<input type="text" ng-model="searchFilter" placeholder="Pretraga" />
+<div class="fix-height">
+	<div class="container-fluid">
+		<div class="search" style="margin-bottom: 20px">
+			<div class="form-group">
+				<label for="search">Pretraga</label>
+				<input type="text" ng-model="searchFilter" placeholder="Pretraga" />
+			</div>
+			<input type="submit" value="Pretraga" ng-click="searchBy();" />
+		</div>
+		<div class="fix-table-height">
+			<table>
+				<thead>
+					<tr>
+						<th class="table-cell-64"></th>
+						<th>Ime</th>
+						<th>Sifra</th>
+						<th>Cena</th>
+						<th class="table-commands"></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="item in items | filter:search">
+						<td>
+							<div class="thumbnail">
+			        		<img ng-src="storage/andor/{{ item.img }}">
+			        		</div>
+						</td>
+						<td>{{ item.name }}</td>
+						<td>{{ item.sifra }}</td>
+						<td>{{ item.price }}</td>
+						<td class="table-commands">
+							<button ng-click="editItem(item.id)" class="btn glyphicon glyphicon-pencil cursor-pointer"></button>
+							<button ng-click="deleteItem(item.id)" class="btn glyphicon glyphicon-trash cursor-pointer"></button>
+						</td>
+					<tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
-	<input type="submit" value="Pretraga" ng-click="searchBy();" />
-</div>
-<div class="container-fluid">
-	<table>
-		<thead>
-			<tr>
-				<th class="table-cell-64"></th>
-				<th>Ime</th>
-				<th>Sifra</th>
-				<th>Cena</th>
-				<th class="table-commands"></th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="item in items | filter:search">
-				<td>
-					<div class="thumbnail">
-	        		<img ng-src="storage/andor/{{ item.img }}">
-	        		</div>
-				</td>
-				<td>{{ item.name }}</td>
-				<td>{{ item.sifra }}</td>
-				<td>{{ item.price }}</td>
-				<td class="table-commands">
-					<button ng-click="editItem(item.id)" class="btn glyphicon glyphicon-pencil cursor-pointer"></button>
-					<button ng-click="deleteItem(item.id)" class="btn glyphicon glyphicon-trash cursor-pointer"></button>
-				</td>
-			<tr>
-		</tbody>
-	</table>
 </div>
