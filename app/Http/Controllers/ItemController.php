@@ -195,7 +195,7 @@ class ItemController extends Controller
 
     public function getItem($id)
     {
-        $item = Item::where('id', '=', $id)->get();
+        $item = Item::where('id', '=', $id)->first();
 
         return response()->json($item);
     }

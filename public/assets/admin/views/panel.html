@@ -1,3 +1,10 @@
+<div class="search">
+	<div class="form-group">
+		<label for="search">Pretraga</label>
+		<input type="text" ng-model="searchFilter" placeholder="Pretraga" />
+	</div>
+	<input type="submit" value="Pretraga" ng-click="searchBy();" />
+</div>
 <div class="container-fluid">
 	<table>
 		<thead>
@@ -10,7 +17,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items track by $index">
+			<tr ng-repeat="item in items | filter:search">
 				<td>
 					<div class="thumbnail">
 	        		<img ng-src="storage/andor/{{ item.img }}">

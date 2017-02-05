@@ -124,3 +124,4 @@ Route::get('logout', 'Auth\AuthController@logout');
 
 Route::get('admin/get-all-items', 'ItemController@getAllItems');
 Route::get('admin/get-item/{id}', 'ItemController@getItem');
+Route::get('admin/get-categories', 'CategoryController@getAllCategories');

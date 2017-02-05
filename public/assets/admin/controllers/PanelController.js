@@ -6,6 +6,8 @@
     PanelController.$inject = ['$scope', '$http', '$window', '$location'];
     
     function PanelController($scope, $http, $window, $location) {
+        $scope.searchFilter = "";
+        $scope.searchBy = "";
 
     	$scope.init = function()
     	{
@@ -27,6 +29,11 @@
     	{
     		$location.path('/edit/' + id);	
     	}
+
+        $scope.searchBy = function()
+        {
+            $scope.search = $scope.searchFilter;
+        }
 
 
 

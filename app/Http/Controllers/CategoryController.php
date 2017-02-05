@@ -7,6 +7,7 @@ use App\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Repositories\CategoryRepository;
+use DB;
 
 class CategoryController extends Controller
 {
@@ -66,6 +67,16 @@ class CategoryController extends Controller
         $category->delete();
 
         return back();
+    }
+
+    public function getAllCategories()
+    {
+        $categories = DB::table('categories')
+                        ->join('subcats', 'subcats.category_id', '=', 'categories.id')
+                        ->select(DB::raw('categories.name as category_name'), 'subcats.*')
+                        ->get();
+
+        return response()->json($categories);
     }
 
 }
